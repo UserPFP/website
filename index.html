@@ -2,25 +2,16 @@
 <html>
 <head>
     <title>UserPFP Header</title>
+    <style>
+        body {
+            background-image: url('https://shiggy.fun/api/v3/random?aspect-ratio=1&aspect-ratio-variance=0.04&nhdfghdsyfewfwfefh');
+            background-size: cover; /* Adjust to fit your layout */
+            /* Other background styling properties can be added here */
+        }
+    </style>
 </head>
 <body>
     <h1>UserPFP</h1>
-    <img id="headerImage" src="" alt="Random Image">
-    <script>
-        // Construct the URL with additional parameters
-        const apiUrl = 'https://shiggy.fun/api/v3/random?aspect-ratio=1&aspect-ratio-variance=0.04&nhdfghdsyfewfwfefh';
-
-        // Fetch the random image from the modified API URL
-        fetch(apiUrl)
-            .then(response => response.json())
-            .then(data => {
-                const headerImage = document.getElementById('headerImage');
-                headerImage.src = data.url;
-                headerImage.alt = data.title;
-            })
-            .catch(error => {
-                console.error('Error fetching random image:', error);
-            });
-    </script>
+    <!-- Your content goes here -->
 </body>
 </html>
