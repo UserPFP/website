@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UserPFP Header</title>
+</head>
+<body>
+    <h1>UserPFP</h1>
+    <img id="headerImage" src="" alt="Random Image">
+    <script>
+        // Fetch a random image from the Shiggy.fun API and set it as the header image
+        fetch('https://shiggy.fun/api/random')
+            .then(response => response.json())
+            .then(data => {
+                const headerImage = document.getElementById('headerImage');
+                headerImage.src = data.url;
+                headerImage.alt = data.title;
+            })
+            .catch(error => {
+                console.error('Error fetching random image:', error);
+            });
+    </script>
+</body>
+</html>
