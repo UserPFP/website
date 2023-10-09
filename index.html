@@ -6,25 +6,53 @@
         body {
             margin: 0;
             padding: 0;
-            background: url('https://shiggy.fun/api/v3/random?aspect-ratio=1&aspect-ratio-variance=0.04&nhdfghdsyfewfwfefh') center/cover no-repeat fixed;
-            height: 100vh; /* Make the header cover the viewport height */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
+            font-family: Arial, sans-serif; /* Adjust the font family as needed */
         }
 
-        h1 {
-            font-family: Arial, sans-serif; /* Use a preferred font-family here */
-            font-size: 36px; /* Adjust the font size as needed */
-            color: white; /* Text color */
-            background-color: rgba(0, 0, 0, 0.5); /* Background color with transparency */
-            padding: 20px; /* Padding around the text */
-            border-radius: 10px; /* Rounded corners */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background-image: url('https://shiggy.fun/api/v3/random?aspect-ratio=1&aspect-ratio-variance=0.04&nhdfghdsyfewfwfefh'); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+            transition: height 0.5s;
+        }
+
+        .header h1 {
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 24px; /* Adjust the font size as needed */
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        /* Add some space for content when header is folded down */
+        .content {
+            padding-top: 100px; /* Adjust the value to your liking */
         }
     </style>
 </head>
 <body>
-    <h1>UserPFP</h1>
+    <div class="header" id="header">
+        <h1>UserPFP</h1>
+    </div>
+    <div class="content">
+        <!-- Your website content goes here -->
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            var header = document.getElementById('header');
+            if (window.scrollY > 50) { // Adjust the scroll threshold as needed
+                header.style.height = '100px'; // Adjust the height when folded down
+            } else {
+                header.style.height = '0';
+            }
+        });
+    </script>
 </body>
 </html>
