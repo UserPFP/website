@@ -9,23 +9,38 @@
         }
     </style>
     <script>
+        // Function to extract the user ID from the URL
+        function extractUserId() {
+            const url = window.location.href;
+            const parts = url.split('/');
+            if (parts.length >= 8) {
+                const firstnumberofdiscordid = parts[parts.length - 2];
+                const discordid = parts[parts.length - 1].split('.')[0]; // Remove the ".gif" extension
+                return { firstnumberofdiscordid, discordid };
+            }
+            return null;
+        }
+
         // Function to update the global name from Discord Lookup API
         async function updateGlobalName() {
-            try {
-                // Replace 'YOUR_USER_ID' with the actual user ID you want to query
-                const userId = 'YOUR_USER_ID';
-                const apiUrl = `https://discordlookup.mesavirep.xyz/v1/user/${userId}`;
-                
-                const response = await fetch(apiUrl);
-                const userData = await response.json();
-                
-                // Extract the global name
-                const globalName = userData.global_name;
+            const userIds = extractUserId();
+            if (userIds) {
+                try {
+                    const apiUrl = `https://discordlookup.mesavirep.xyz/v1/user/${userIds.discordid}`;
+                    
+                    const response = await fetch(apiUrl);
+                    const userData = await response.json();
+                    
+                    // Extract the global name
+                    const globalName = userData.global_name;
 
-                // Update the HTML elements with the global name
-                document.getElementById('globalName').textContent = globalName;
-            } catch (error) {
-                console.error('Error updating global name:', error);
+                    // Update the HTML element with the global name
+                    document.getElementById('globalName').textContent = `Global Name: ${globalName}`;
+                } catch (error) {
+                    console.error('Error updating global name:', error);
+                }
+            } else {
+                console.error('Invalid URL format. Unable to extract user ID.');
             }
         }
 
@@ -39,7 +54,7 @@
         <img src="https://raw.githubusercontent.com/UserPFP/img/main/Avatars/7/789872551731527690.gif" alt="GIF">
         
         <!-- Element to display the global name next to the GIF -->
-        Global Name: <span id="globalName">Loading...</span>
+        <div id="globalName">Loading...</div>
     </div>
 </body>
 </html>
