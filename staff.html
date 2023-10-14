@@ -8,12 +8,38 @@
             background-color: #f0f0f0; /* Change the background color as needed */
         }
     </style>
+    <script>
+        // Function to update the global name from Discord Lookup API
+        async function updateGlobalName() {
+            try {
+                // Replace 'YOUR_USER_ID' with the actual user ID you want to query
+                const userId = 'YOUR_USER_ID';
+                const apiUrl = `https://discordlookup.mesavirep.xyz/v1/user/${userId}`;
+                
+                const response = await fetch(apiUrl);
+                const userData = await response.json();
+                
+                // Extract the global name
+                const globalName = userData.global_name;
+
+                // Update the HTML elements with the global name
+                document.getElementById('globalName').textContent = globalName;
+            } catch (error) {
+                console.error('Error updating global name:', error);
+            }
+        }
+
+        // Call the function when the page loads
+        window.addEventListener('load', updateGlobalName);
+    </script>
 </head>
 <body>
     <div class="container">
         <!-- Display the GIF with the provided URL -->
         <img src="https://raw.githubusercontent.com/UserPFP/img/main/Avatars/7/789872551731527690.gif" alt="GIF">
+        
+        <!-- Element to display the global name next to the GIF -->
+        Global Name: <span id="globalName">Loading...</span>
     </div>
 </body>
 </html>
-
