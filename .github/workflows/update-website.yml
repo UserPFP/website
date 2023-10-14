@@ -25,7 +25,7 @@ jobs:
       id: extract-discord-id
       run: |
         # Extract the Discord ID from the URL (replace 'YOUR_URL' with the actual URL)
-        URL="YOUR_URL"
+        URL="https://raw.githubusercontent.com/UserPFP/img/main/Avatars/7/789872551731527690.gif"
         USER_ID=$(echo "$URL" | awk -F '/' '{print $NF}' | cut -d '.' -f1)
         echo "::set-output name=userId::$USER_ID"
 
