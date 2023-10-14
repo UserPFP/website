@@ -1,0 +1,53 @@
+name: Update Website
+
+on:
+  push:
+    branches:
+      - main # Adjust this to match the branch you want to trigger the workflow
+
+jobs:
+  update-website:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 14
+
+    - name: Install Dependencies
+      run: npm install
+
+    - name: Extract Discord ID
+      id: extract-discord-id
+      run: |
+        # Extract the Discord ID from the URL (replace 'YOUR_URL' with the actual URL)
+        URL="YOUR_URL"
+        USER_ID=$(echo "$URL" | awk -F '/' '{print $NF}' | cut -d '.' -f1)
+        echo "::set-output name=userId::$USER_ID"
+
+    - name: Fetch Discord Global Name
+      id: fetch-global-name
+      run: |
+        USER_ID="${{ steps.extract-discord-id.outputs.userId }}"
+        API_URL="https://discordlookup.mesavirep.xyz/v1/user/$USER_ID"
+        GLOBAL_NAME=$(curl -s "$API_URL" | jq -r '.global_name')
+        echo "::set-output name=globalName::$GLOBAL_NAME"
+
+    - name: Update Website Content
+      run: |
+        GLOBAL_NAME="${{ steps.fetch-global-name.outputs.globalName }}"
+        # Update your website content with the global name (e.g., using sed or other tools)
+        # Replace 'index.html' with the actual file you want to update
+        sed -i "s|<div id=\"global-name\">Loading...</div>|<div id=\"global-name\">${GLOBAL_NAME}</div>|" staff.html
+
+    - name: Commit and Push Changes
+      run: |
+        git config user.email "you@example.com"
+        git config user.name "Your Name"
+        git add index.html
+        git commit -m "Update global name"
+        git push
