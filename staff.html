@@ -1,60 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Page</title>
     <style>
-        /* Define the outline and background styles */
+        /* Global Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #151515; /* Background color */
+        }
+
+        /* Container Styles */
         .container {
-            border: 2px solid #000; /* Change the color and width as needed */
-            background-color: #f0f0f0; /* Change the background color as needed */
+            border: 2px solid transparent;
+            background-color: rgba(255, 255, 255, 0.1); /* Glass effect background */
+            padding: 20px;
+            text-align: center;
+            margin: 20% auto;
+            max-width: 400px;
+            transition: border 0.5s, background-color 0.5s;
+        }
+
+        .container:hover {
+            border: 2px solid #00f3ff; /* Border color on hover */
+            background-color: rgba(255, 255, 255, 0.2); /* Background color on hover */
+        }
+
+        /* Image Styles */
+        .avatar {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.5); /* Box shadow for the image */
+        }
+
+        /* Text Styles */
+        #userName {
+            color: #00f3ff; /* Text color */
+            margin-top: 10px;
         }
     </style>
-    <script>
-        // Function to extract the user ID from the URL
-        function extractUserId() {
-            const url = window.location.href;
-            const parts = url.split('/');
-            if (parts.length >= 8) {
-                const firstnumberofdiscordid = parts[parts.length - 2];
-                const discordid = parts[parts.length - 1].split('.')[0]; // Remove the ".gif" extension
-                return { firstnumberofdiscordid, discordid };
-            }
-            return null;
-        }
-
-        // Function to update the global name from Discord Lookup API
-        async function updateGlobalName() {
-            const userIds = extractUserId();
-            if (userIds) {
-                try {
-                    const apiUrl = `https://discordlookup.mesavirep.xyz/v1/user/${userIds.discordid}`;
-                    
-                    const response = await fetch(apiUrl);
-                    const userData = await response.json();
-                    
-                    // Extract the global name
-                    const globalName = userData.global_name;
-
-                    // Update the HTML element with the global name
-                    document.getElementById('globalName').textContent = `Global Name: ${globalName}`;
-                } catch (error) {
-                    console.error('Error updating global name:', error);
-                }
-            } else {
-                console.error('Invalid URL format. Unable to extract user ID.');
-            }
-        }
-
-        // Call the function when the page loads
-        window.addEventListener('load', updateGlobalName);
-    </script>
 </head>
 <body>
     <div class="container">
-        <!-- Display the GIF with the provided URL -->
-        <img src="https://raw.githubusercontent.com/UserPFP/img/main/Avatars/7/789872551731527690.gif" alt="GIF">
-        
-        <!-- Element to display the global name next to the GIF -->
-        <div id="globalName">Loading...</div>
+        <img class="avatar" src="https://raw.githubusercontent.com/UserPFP/img/main/Avatars/7/789872551731527690.gif" alt="User Avatar">
+        <div id="userName">FoxStorm1</div>
     </div>
 </body>
 </html>
