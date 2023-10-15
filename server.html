@@ -1,22 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>USERPFP Discord Server</title>
-    <link rel="stylesheet" type="text/css" href="styles.css"> <!-- Link to an external CSS file -->
     <link href="https://fonts.googleapis.com/css2?family=Uni+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css"> <!-- Link to an external CSS file -->
+    <style>
+        /* Add a hover animation for the GitHub icon */
+        .github-icon:hover {
+            transform: scale(1.2); /* Increase the size on hover */
+            transition: transform 0.3s; /* Add a smooth transition */
+        }
 
+        /* Add a hover animation for the "Join Server" button */
+        .server-button:hover {
+            background-color: #4a4d52; /* Change the background color on hover */
+        }
+    </style>
 </head>
 <body>
-    <div class="profile">
-        <h1>Welcome to USERPFP Discord Server</h1>
-        <img src="https://cdn.discordapp.com/discovery-splashes/1129784704267210844/bd091e64962f6ea55e749b1fcb90f36d.jpg?size=2048" alt="Server Banner">
-        <div class="server-details">
-            <p class="server-name">Server Name: USERPFP</p>
-            <p class="about">About: Join our community where members hang out, share AI art, code, and have team wars between characters. We have a gallery channel that you can post Gaming clips and AI art in. We have a coding channel that you can use to share code, and you can use the support channel if you need any support. Join and let your Profile Picture guide the way!</p>
-            <p class="invite-link">Server Invite Link: <a href="https://discord.com/invite/userpfp-1129784704267210844">Join Now</a></p>
+    <div class="server-container">
+        <img class="server-image" src="https://cdn.discordapp.com/discovery-splashes/1129784704267210844/bd091e64962f6ea55e749b1fcb90f36d.jpg?size=2048" alt="Server Banner">
+        <div class="server-info">
+            <h1>Welcome to USERPFP Discord Server</h1>
+            <p>Join our community where members hang out, share AI art, code, and have team wars between characters. We have a gallery channel that you can post Gaming clips and AI art in. We have a coding channel that you can use to share code, and you can use the support channel if you need any support. Join and let your Profile Picture guide the way!</p>
         </div>
-        <img src="https://cdn.discordapp.com/icons/1129784704267210844/fcb4364bf504ac71d3bb3846977aa6df.jpg?size=256" alt="Server Icon">
+        <div class="server-buttons">
+            <a href="https://github.com/userpfp/userpfp" target="_blank">
+                <img class="github-icon" src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Icon">
+            </a>
+            <a class="server-button" href="https://discord.com/invite/userpfp-1129784704267210844" target="_blank">Join Server</a>
+        </div>
     </div>
 </body>
 </html>
