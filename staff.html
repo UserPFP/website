@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Staff Page</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"> <!-- Link to an external CSS file -->
     <link href="https://fonts.googleapis.com/css2?family=Uni+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
@@ -15,7 +16,6 @@
 
         .staff-member {
             display: flex;
-            flex-direction: column;
             align-items: center;
             margin: 20px;
         }
@@ -35,10 +35,14 @@
         }
 
         .staff-info {
-            text-align: center;
             background: #7289DA; /* Discord color background */
             color: #fff; /* White text color */
             padding: 10px;
+            text-align: center;
+        }
+
+        .username {
+            font-weight: bold;
         }
     </style>
 </head>
@@ -50,12 +54,12 @@
             </div>
             <div class="staff-info">
                 <div class="username">FoxStorm1</div>
-                <p>A developer and the owner of UserPFP (remaking since idea was already there). A passion project (all the staff on the page are involved with UserPFP).</p>
+                <p>A developer and the owner of UserPFP (remaking since the idea was already there). A passion project (all the staff on the page are involved with UserPFP).</p>
             </div>
         </div>
         <div class="staff-member">
             <div class="avatar-container">
-                <img class="avatar" src="https://raw.githubusercontent.com/UserPFP/img/main/Avatars/4/406084422308331522.gif" alt="User Avatar">
+                <img class "avatar" src="https://raw.githubusercontent.com/UserPFP/img/main/Avatars/4/406084422308331522.gif" alt="User Avatar">
             </div>
             <div class="staff-info">
                 <div class="username">Coolesding</div>
