@@ -1,0 +1,50 @@
+body {
+    background-color: #05FC00;
+    font-family: "Discord";
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.profile {
+    background-color: #36393f;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.server-details {
+    margin-top: 20px;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.server-name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.about {
+    font-size: 16px;
+}
+
+.invite-link {
+    font-size: 16px;
+}
+
+a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
