@@ -30,8 +30,7 @@
 
         .avatar {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto;
         }
 
         .staff-info {
@@ -39,10 +38,16 @@
             color: #fff; /* White text color */
             padding: 10px;
             text-align: center;
+            flex: 1; /* Allow the text box to grow dynamically */
         }
 
         .username {
             font-weight: bold;
+            font-size: 16px; /* Adjust the font size as needed */
+        }
+
+        p {
+            font-size: 14px; /* Adjust the font size as needed */
         }
     </style>
 </head>
@@ -59,14 +64,14 @@
         </div>
         <div class="staff-member">
             <div class="avatar-container">
-                <img class "avatar" src="https://raw.githubusercontent.com/UserPFP/img/main/Avatars/4/406084422308331522.gif" alt="User Avatar">
+                <img class="avatar" src="https://raw.githubusercontent.com/UserPFP/img/main/Avatars/4/406084422308331522.gif" alt="User Avatar">
             </div>
             <div class="staff-info">
                 <div class="username">Coolesding</div>
                 <p>Developer who has helped out with CSS and coding lots, sort of second in charge but not because Asteria is. Shiggy fan.</p>
             </div>
         </div>
-        <div class="staff-member">
+        <div class "staff-member">
             <div class="avatar-container">
                 <img class="avatar" src="https://raw.githubusercontent.com/UserPFP/img/main/Avatars/8/853550207039832084.gif" alt="User Avatar">
             </div>
