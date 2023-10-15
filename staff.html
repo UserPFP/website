@@ -6,80 +6,27 @@
     <title>Staff Page</title>
     <link rel="stylesheet" type="text/css" href="styles.css"> <!-- Link to an external CSS file -->
     <link href="https://fonts.googleapis.com/css2?family=Uni+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <style>
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
-
-        .staff-member {
-            display: flex;
-            align-items: center;
-            margin: 20px;
-        }
-
-        .avatar-container {
-            width: 100px; /* Set the desired width */
-            height: 100px; /* Set the desired height */
-            overflow: hidden;
-            border: 3px solid #7289DA; /* Discord color border */
-            border-radius: 50%; /* Circle border */
-        }
-
-        .avatar {
-            width: 100%;
-            height: auto;
-        }
-
-        .staff-info {
-            background: #7289DA; /* Discord color background */
-            color: #fff; /* White text color */
-            padding: 10px;
-            text-align: center;
-            flex: 1; /* Allow the text box to grow dynamically */
-        }
-
-        .username {
-            font-weight: bold;
-            font-size: 16px; /* Adjust the font size as needed */
-        }
-
-        p {
-            font-size: 14px; /* Adjust the font size as needed */
-        }
-    </style>
 </head>
 <body>
     <div class="container">
-        <div class="staff-member">
-            <div class="avatar-container">
-                <img class="avatar" src="https://raw.githubusercontent.com/UserPFP/img/main/Avatars/7/789872551731527690.gif" alt="User Avatar">
-            </div>
-            <div class="staff-info">
-                <div class="username">FoxStorm1</div>
-                <p>A developer and the owner of UserPFP (remaking since the idea was already there). A passion project (all the staff on the page are involved with UserPFP).</p>
-            </div>
-        </div>
-        <div class="staff-member">
-            <div class="avatar-container">
-                <img class="avatar" src="https://raw.githubusercontent.com/UserPFP/img/main/Avatars/4/406084422308331522.gif" alt="User Avatar">
-            </div>
-            <div class="staff-info">
-                <div class="username">Coolesding</div>
-                <p>Developer who has helped out with CSS and coding lots, sort of second in charge but not because Asteria is. Shiggy fan.</p>
-            </div>
-        </div>
-        <div class="staff-member">
-            <div class="avatar-container">
-                <img class="avatar" src="https://raw.githubusercontent.com/UserPFP/img/main/Avatars/8/853550207039832084.gif" alt="User Avatar">
-            </div>
-            <div class="staff-info">
-                <div class="username">Nexpid</div>
-                <p>Developer of the Vendetta plugin of UserPFP.</p>
-            </div>
-        </div>
+        <img class="avatar" src="https://raw.githubusercontent.com/UserPFP/img/main/Avatars/7/789872551731527690.gif" alt="User Avatar">
+        <div id="userName">FoxStorm1</div>
+    </div>
+
+    <!-- Add a line break here -->
+    <br>
+
+    <div class="container">
+        <img class="avatar" src="https://raw.githubusercontent.com/UserPFP/img/main/Avatars/4/406084422308331522.gif" alt="User Avatar">
+        <div id="userName">Coolesding</div>
+    </div>
+
+    <!-- Add another line break here -->
+    <br>
+
+    <div class="container">
+        <img class="avatar" src="https://raw.githubusercontent.com/UserPFP/img/main/Avatars/8/853550207039832084.gif" alt="User Avatar">
+        <div id="userName">Nexpid</div>
     </div>
 </body>
 </html>
