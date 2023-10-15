@@ -54,7 +54,6 @@
             try {
                 const [response, notShownResponse] = await Promise.all([
                     fetch('https://userpfp.github.io/UserPFP/import.css'), // Add the correct URL here
-                    fetch('https://example.com/notshown.css'), // Replace with the actual URL
                 ]);
 
                 const [cssText, notShownText] = await Promise.all([
