@@ -8,14 +8,67 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
         /* Add a hover animation for the GitHub icon */
+        .github-icon {
+            width: 50px; /* Adjust the size of the GitHub icon */
+            height: 50px;
+            transition: transform 0.3s, filter 0.3s; /* Add a smooth transition */
+        }
+
         .github-icon:hover {
             transform: scale(1.2); /* Increase the size on hover */
-            transition: transform 0.3s; /* Add a smooth transition */
+            filter: brightness(1.5); /* Add brightness on hover */
         }
 
         /* Add a hover animation for the "Join Server" button */
+        .server-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 10px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #7289da;
+            border-radius: 5px;
+            transition: background-color 0.3s; /* Add a smooth transition */
+        }
+
         .server-button:hover {
             background-color: #4a4d52; /* Change the background color on hover */
+        }
+
+        /* Style the server container */
+        .server-container {
+            text-align: center;
+            margin: 20px;
+        }
+
+        /* Style the server info */
+        .server-info {
+            margin-top: 20px;
+        }
+
+        /* Style the server image */
+        .server-image {
+            max-width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Style the server buttons container */
+        .server-buttons {
+            margin-top: 20px;
+        }
+
+        /* Center the navbar links */
+        .navbar {
+            text-align: center;
+            background-color: #333;
+            padding: 15px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
         }
     </style>
 </head>
