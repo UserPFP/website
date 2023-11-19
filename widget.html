@@ -49,28 +49,13 @@
 </head>
 <body>
     <script>
-        // Function to fetch and extract GIF URLs from avatars.css asynchronously
         async function getValidGifURLs() {
             try {
-                const [response, notShownResponse] = await Promise.all([
-                    fetch('https://userpfp.github.io/UserPFP/source/data.json'), // Add the correct URL here
-                ]);
+                const response = await fetch('https://userpfp.github.io/UserPFP/source/data.json');
+                const data = await response.json();
 
-                const [cssText, notShownText] = await Promise.all([
-                    response.text(),
-                    notShownResponse.text(),
-                ]);
-
-                const gifRegex = /url\(["']?(https:\/\/.+?\.gif)["']?\)/g;
-                let match;
-                const gifURLs = [];
-
-                while ((match = gifRegex.exec(cssText)) !== null) {
-                    const gifURL = match[1];
-                    if (!isBadgeOrServerIcon(gifURL) && !notShownText.includes(gifURL)) {
-                        gifURLs.push(gifURL);
-                    }
-                }
+                const avatars = data.avatars || {};
+                const gifURLs = Object.values(avatars).filter(url => !isBadgeOrServerIcon(url));
 
                 return gifURLs;
             } catch (error) {
@@ -79,7 +64,6 @@
             }
         }
 
-        // Function to check if the given URL is a badge or server icon URL
         function isBadgeOrServerIcon(url) {
             return (
                 url.includes("profileBadges") ||
@@ -89,7 +73,6 @@
             );
         }
 
-        // Function to shuffle the array elements in random order
         function shuffleArray(array) {
             for (let i = array.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
@@ -97,7 +80,6 @@
             }
         }
 
-        // Function to add moving image elements to the container with error handling
         function addMovingImagesToContainer(imageUrls, containerElement) {
             for (const imageUrl of imageUrls) {
                 const imageContainer = document.createElement('div');
@@ -106,12 +88,9 @@
                 const imageElement = document.createElement('img');
                 imageElement.classList.add('moving-image');
 
-                // Set the image source
                 imageElement.src = imageUrl;
 
-                // Add an error event listener to handle image load errors
                 imageElement.addEventListener('error', () => {
-                    // Remove the container if an error occurs
                     containerElement.removeChild(imageContainer);
                 });
 
@@ -120,22 +99,20 @@
             }
         }
 
-        // Function to create the dynamic background
         async function createDynamicBackground() {
             const containerElement = document.createElement('div');
             containerElement.classList.add('moving-container');
             document.body.appendChild(containerElement);
 
             const gifURLs = await getValidGifURLs();
-            shuffleArray(gifURLs); // Shuffle the GIF URLs in random order
+            shuffleArray(gifURLs);
 
-            const numGifsToShow = 8; // Change this value to display a different number of GIFs at a time
+            const numGifsToShow = 8;
             const gifURLsToShow = gifURLs.slice(0, numGifsToShow);
 
             addMovingImagesToContainer(gifURLsToShow, containerElement);
         }
 
-        // Create the dynamic background asynchronously
         createDynamicBackground();
     </script>
 </body>
