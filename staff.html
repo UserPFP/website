@@ -8,6 +8,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Uni+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
+        /* Reset some default styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Uni Sans', sans-serif;
+        }
+
+        /* Style the navbar similar to server.html */
+        .navbar {
+            text-align: center;
+            background-color: #4a4d52;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
         .container {
             display: flex;
             flex-wrap: wrap;
@@ -21,11 +42,11 @@
         }
 
         .avatar-container {
-            width: 100px; /* Set the desired width */
-            height: 100px; /* Set the desired height */
+            width: 100px;
+            height: 100px;
             overflow: hidden;
-            border: 3px solid #7289DA; /* Discord color border */
-            border-radius: 50%; /* Circle border */
+            border: 3px solid #7289DA;
+            border-radius: 50%;
         }
 
         .avatar {
@@ -34,20 +55,20 @@
         }
 
         .staff-info {
-            background: #7289DA; /* Discord color background */
-            color: #fff; /* White text color */
+            background: #7289DA;
+            color: #fff;
             padding: 10px;
             text-align: center;
-            flex: 1; /* Allow the text box to grow dynamically */
+            flex: 1;
         }
 
         .username {
             font-weight: bold;
-            font-size: 16px; /* Adjust the font size as needed */
+            font-size: 16px;
         }
 
         p {
-            font-size: 14px; /* Adjust the font size as needed */
+            font-size: 14px;
         }
     </style>
 </head>
