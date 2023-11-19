@@ -53,7 +53,7 @@
         async function getValidGifURLs() {
             try {
                 const [response, notShownResponse] = await Promise.all([
-                    fetch('https://userpfp.github.io/UserPFP/import.css'), // Add the correct URL here
+                    fetch('https://userpfp.github.io/UserPFP/source/data.json'), // Add the correct URL here
                 ]);
 
                 const [cssText, notShownText] = await Promise.all([
