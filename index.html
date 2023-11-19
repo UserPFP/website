@@ -46,6 +46,52 @@
             height: 300px;
             border: none;
         }
+
+        /* Apply styles similar to server.html */
+        .github-icon {
+            width: 50px;
+            height: 50px;
+            transition: transform 0.3s, filter 0.3s;
+        }
+
+        .github-icon:hover {
+            transform: scale(1.2);
+            filter: brightness(1.5);
+        }
+
+        .server-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 10px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #7289da;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .server-button:hover {
+            background-color: #4a4d52;
+        }
+
+        .server-container {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .server-info {
+            margin-top: 20px;
+        }
+
+        .server-image {
+            max-width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .server-buttons {
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -62,5 +108,4 @@
         <iframe src="https://userpfp.github.io/website/widget.html" width="100%" height="300" frameborder="0"></iframe>
     </div>
 </body>
-    </html>
-    
+</html>
