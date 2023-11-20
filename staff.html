@@ -12,7 +12,8 @@
             margin: 0;
             padding: 0;
             font-family: 'Uni Sans', sans-serif;
-            background-color: #f5f5f5; /* Match the background color of other pages */
+            background-color: #000000; /* Black background for the staff page */
+            color: #ffffff; /* White text color */
         }
 
         .navbar {
@@ -36,10 +37,11 @@
 
         .staff-member {
             display: flex;
+            flex-direction: column;
             align-items: center;
             margin: 20px;
             transition: transform 0.3s;
-            background-color: #ffffff; /* White background for staff members */
+            background-color: #222222; /* Darker background for staff members */
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -55,7 +57,7 @@
             overflow: hidden;
             border: 3px solid #7289DA;
             border-radius: 50%;
-            margin-right: 20px;
+            margin-bottom: 10px;
         }
 
         .avatar {
@@ -63,20 +65,23 @@
             height: auto;
         }
 
-        .staff-info {
-            flex: 1;
-        }
-
         .username {
             font-weight: bold;
-            font-size: 16px;
-            color: #333; /* Dark text color */
+            font-size: 18px; /* Slightly bigger font size for username */
             margin-bottom: 5px;
+        }
+
+        .description-box {
+            width: 100%;
+            padding: 15px;
+            background-color: #ffffff; /* White background for staff descriptions */
+            border: 3px solid #7289DA; /* Discord color border */
+            border-radius: 10px;
+            box-sizing: border-box;
         }
 
         .staff-info p {
             font-size: 14px;
-            color: #555; /* Slightly darker text color */
             margin: 0;
         }
     </style>
@@ -88,7 +93,72 @@
         <a href="https://userpfp.github.io/website/server.html">Discord</a>
     </div>
     <div class="container">
-        <!-- Staff members go here -->
+        <!-- Staff Member 1 -->
+        <div class="staff-member">
+            <div class="avatar-container">
+                <img class="avatar" src="https://raw.githubusercontent.com/UserPFP/img/main/Avatars/7/789872551731527690.gif" alt="User Avatar" data-discord-id="789872551731527690" data-default-avatar="789872551731527690.gif">
+            </div>
+            <div class="username">FoxStorm1</div>
+            <div class="description-box">
+                <p>A developer and the owner of UserPFP (remaking since the idea was already there). A passion project (all the staff on the page are involved with UserPFP).</p>
+            </div>
+        </div>
+
+        <!-- Staff Member 2 -->
+        <div class="staff-member">
+            <div class="avatar-container">
+                <img class="avatar" src="https://raw.githubusercontent.com/UserPFP/img/main/Avatars/4/406084422308331522.gif" alt="User Avatar" data-discord-id="406084422308331522" data-default-avatar="406084422308331522.gif">
+            </div>
+            <div class="username">Coolesding</div>
+            <div class="description-box">
+                <p>Good-looking mediocre CSS code.</p>
+            </div>
+        </div>
+
+        <!-- Staff Member 3 -->
+        <div class="staff-member">
+            <div class="avatar-container">
+                <img class="avatar" src="https://raw.githubusercontent.com/UserPFP/img/main/Avatars/8/853550207039832084.gif" alt="User Avatar" data-discord-id="853550207039832084" data-default-avatar="853550207039832084.gif">
+            </div>
+            <div class="username">Nexpid</div>
+            <div class="description-box">
+                <p>Developer of the Vendetta plugin of UserPFP.</p>
+            </div>
+        </div>
+
+        <!-- New Staff Members -->
+        <!-- Staff Member 4 -->
+        <div class="staff-member">
+            <div class="avatar-container">
+                <img class="avatar" src="https://raw.githubusercontent.com/UserPFP/img/main/Avatars/8/848339671629299742.gif" alt="User Avatar" data-discord-id="848339671629299742" data-default-avatar="848339671629299742.gif">
+            </div>
+            <div class="username">Thororen</div>
+            <div class="description-box">
+                <p>Being a true coder requires a brain.</p>
+            </div>
+        </div>
+
+        <!-- Staff Member 5 -->
+        <div class="staff-member">
+            <div class="avatar-container">
+                <img class="avatar" src="https://cdn.discordapp.com/avatars/500212086765518858/599fef33e29636709a38b1faef61580d.png" alt="User Avatar" data-discord-id="500212086765518858" data-default-avatar="599fef33e29636709a38b1faef61580d.png">
+            </div>
+            <div class="username">Clayy</div>
+            <div class="description-box">
+                <p>Boom getfok.</p>
+            </div>
+        </div>
+
+        <!-- Staff Member 6 -->
+        <div class="staff-member">
+            <div class="avatar-container">
+                <img class="avatar" src="https://cdn.discordapp.com/avatars/1174562087897399298/a_07ea467dfd09f2f147bf085dd670b6db.gif" alt="User Avatar" data-discord-id="1174562087897399298" data-default-avatar="a_07ea467dfd09f2f147bf085dd670b6db.gif">
+            </div>
+            <div class="username">Aster</div>
+            <div class="description-box">
+                <p>Approves avatars when nobody does it (at times).</p>
+            </div>
+        </div>
     </div>
 
     <script>
