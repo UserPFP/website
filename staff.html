@@ -33,6 +33,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
+            margin: 0 20px; /* Add margins to the container */
         }
 
         .staff-member {
@@ -46,7 +47,7 @@
             overflow: hidden;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             height: 350px; /* Set a fixed height for staff sections */
-            width: 200px; /* Set a fixed width for staff sections */
+            width: calc(33.33% - 40px); /* Set a fixed width for staff sections with margins */
         }
 
         .staff-member:hover {
