@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Staff Page</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Uni+Sans:wght@400;700&display=swap" rel="stylesheet">
@@ -12,53 +12,46 @@
             margin: 0;
             padding: 0;
             font-family: 'Uni Sans', sans-serif;
-            background-color: #000000; /* Black background for the staff page */
-            color: #ffffff; /* White text color */
+            background-color: #282c35; /* Updated background color */
+            color: #ffffff;
         }
 
         .navbar {
             text-align: center;
-            background-color: #4a4d52;
+            background-color: #3d424d; /* Updated navbar background color */
             padding: 15px;
             margin-bottom: 20px;
         }
 
         .navbar a {
-            color: white;
+            color: #ffffff;
             text-decoration: none;
             margin: 0 15px;
-            transition: color 0.3s;
-        }
-
-        .navbar a:hover {
-            color: #7289DA; /* Discord color on hover */
         }
 
         .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            background-color: #333333; /* Darker background for better separation */
-            padding: 20px;
-            border-radius: 10px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            justify-content: center;
+            margin: 20px;
         }
 
         .staff-member {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin: 20px;
-            transition: transform 0.3s;
-            background-color: #222222; /* Darker background for staff members */
+            transition: transform 0.3s, box-shadow 0.3s;
+            background-color: #394050; /* Darker background for staff members */
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            height: 350px; /* Set a fixed height for staff sections */
-            width: calc(33.33% - 40px); /* Set a fixed width for staff sections with margins */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            height: 350px;
         }
 
         .staff-member:hover {
-            transform: scale(1.05);
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
         }
 
         .avatar-container {
@@ -73,35 +66,39 @@
         .avatar {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Maintain avatar proportions without stretching */
-            border-radius: 50%;
-            border: 3px solid #7289DA; /* Discord color border */
+            object-fit: cover;
         }
 
         .username {
             font-weight: bold;
-            font-size: 18px; /* Slightly bigger font size for username */
+            font-size: 18px;
             margin-bottom: 5px;
-            text-align: center; /* Center-align the username */
+            text-align: center;
         }
 
         .description-box {
             width: 100%;
             padding: 15px;
-            background-color: #000000; /* Black background for staff descriptions */
-            border: 3px solid #7289DA; /* Discord color border */
-            border-radius: 10px;
+            background-color: #394050; /* Darker background for staff descriptions */
+            border: 3px solid #7289DA;
+            border-radius: 0 0 10px 10px;
             box-sizing: border-box;
             height: 100%;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            opacity: 0; /* Initially hidden */
+            transition: opacity 0.3s;
+        }
+
+        .staff-member:hover .description-box {
+            opacity: 1; /* Show on hover */
         }
 
         .staff-info p {
             font-size: 14px;
             margin: 0;
-            color: #ffffff; /* White text color */
+            color: #ffffff;
         }
     </style>
 </head>
@@ -119,7 +116,7 @@
             </div>
             <div class="username">FoxStorm1</div>
             <div class="description-box">
-                <p>A developer and the owner of UserPFP (remaking since the idea was already there). A passion project (all the staff on the page are involved with UserPFP).</p>
+                <p>A developer and the owner of UserPFP. Passionate about remaking and improving UserPFP.</p>
             </div>
         </div>
 
@@ -130,7 +127,7 @@
             </div>
             <div class="username">Coolesding</div>
             <div class="description-box">
-                <p>Good-looking mediocre CSS code.</p>
+                <p>Passionate about writing good-looking and efficient CSS code.</p>
             </div>
         </div>
 
@@ -141,7 +138,7 @@
             </div>
             <div class="username">Nexpid</div>
             <div class="description-box">
-                <p>Developer of the Vendetta plugin of UserPFP.</p>
+                <p>Developer of the Vendetta plugin for UserPFP.</p>
             </div>
         </div>
 
@@ -153,7 +150,7 @@
             </div>
             <div class="username">Thororen</div>
             <div class="description-box">
-                <p>Being a true coder requires a brain.</p>
+                <p>Believes that being a true coder requires both skill and a creative mind.</p>
             </div>
         </div>
 
@@ -164,7 +161,7 @@
             </div>
             <div class="username">Clayy</div>
             <div class="description-box">
-                <p>Boom getfok.</p>
+                <p>Enjoys bringing excitement to coding. Boom getfok!</p>
             </div>
         </div>
 
@@ -175,7 +172,7 @@
             </div>
             <div class="username">Aster</div>
             <div class="description-box">
-                <p>Approves avatars when nobody does it (at times).</p>
+                <p>Passionate about approving avatars even when nobody else does it.</p>
             </div>
         </div>
     </div>
