@@ -37,6 +37,11 @@
             display: flex;
             align-items: center;
             margin: 20px;
+            transition: transform 0.3s;
+        }
+
+        .staff-member:hover {
+            transform: scale(1.05);
         }
 
         .avatar-container {
@@ -79,7 +84,7 @@
     <div class="container">
         <div class="staff-member">
             <div class="avatar-container">
-                <img class="avatar" src="https://raw.githubusercontent.com/UserPFP/img/main/Avatars/7/789872551731527690.gif" alt="User Avatar">
+                <img class="avatar" src="https://raw.githubusercontent.com/UserPFP/img/main/Avatars/7/789872551731527690.gif" alt="User Avatar" data-discord-id="789872551731527690" data-default-avatar="789872551731527690.gif">
             </div>
             <div class="staff-info">
                 <div class="username">FoxStorm1</div>
@@ -88,7 +93,7 @@
         </div>
         <div class="staff-member">
             <div class="avatar-container">
-                <img class="avatar" src="https://raw.githubusercontent.com/UserPFP/img/main/Avatars/4/406084422308331522.gif" alt="User Avatar">
+                <img class="avatar" src="https://raw.githubusercontent.com/UserPFP/img/main/Avatars/4/406084422308331522.gif" alt="User Avatar" data-discord-id="406084422308331522" data-default-avatar="406084422308331522.gif">
             </div>
             <div class="staff-info">
                 <div class="username">Coolesding</div>
@@ -97,13 +102,60 @@
         </div>
         <div class="staff-member">
             <div class="avatar-container">
-                <img class="avatar" src="https://raw.githubusercontent.com/UserPFP/img/main/Avatars/8/853550207039832084.gif" alt="User Avatar">
+                <img class="avatar" src="https://raw.githubusercontent.com/UserPFP/img/main/Avatars/8/853550207039832084.gif" alt="User Avatar" data-discord-id="853550207039832084" data-default-avatar="853550207039832084.gif">
             </div>
             <div class="staff-info">
                 <div class="username">Nexpid</div>
                 <p>Developer of the Vendetta plugin of UserPFP.</p>
             </div>
         </div>
+        <!-- New staff members -->
+        <div class="staff-member">
+            <div class="avatar-container">
+                <img class="avatar" src="https://raw.githubusercontent.com/UserPFP/img/main/Avatars/8/848339671629299742.gif" alt="User Avatar" data-discord-id="848339671629299742" data-default-avatar="848339671629299742.gif">
+            </div>
+            <div class="staff-info">
+                <div class="username">Thororen</div>
+                <p>Being a true coder requires a brain.</p>
+            </div>
+        </div>
+        <div class="staff-member">
+            <div class="avatar-container">
+                <img class="avatar" src="https://cdn.discordapp.com/avatars/500212086765518858/599fef33e29636709a38b1faef61580d.png" alt="User Avatar" data-discord-id="500212086765518858" data-default-avatar="599fef33e29636709a38b1faef61580d.png">
+            </div>
+            <div class="staff-info">
+                <div class="username">Clayy</div>
+                <p>Boom getfok.</p>
+            </div>
+        </div>
+        <div class="staff-member">
+            <div class="avatar-container">
+                <img class="avatar" src="https://cdn.discordapp.com/avatars/1174562087897399298/a_07ea467dfd09f2f147bf085dd670b6db.gif" alt="User Avatar" data-discord-id="1174562087897399298" data-default-avatar="a_07ea467dfd09f2f147bf085dd670b6db.gif">
+            </div>
+            <div class="staff-info">
+                <div class="username">Aster</div>
+                <p>Approves avatars when nobody does it (at times).</p>
+            </div>
+        </div>
     </div>
-</body>
-</html>
+
+    <script>
+        // Function to set Discord avatar if the image URL is not available
+        function setDiscordAvatar(element, discordId, defaultAvatar) {
+            element.src = `https://cdn.discordapp.com/avatars/${discordId}/${defaultAvatar}`;
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            // Check and set Discord avatars for each staff member
+            const avatars = document.querySelectorAll('.avatar');
+            avatars.forEach(avatar => {
+                avatar.onerror = function() {
+                    // If the avatar URL fails, load the specified Discord avatar
+                    const discordId = this.getAttribute('data-discord-id');
+                    const defaultAvatar = this.getAttribute('data-default-avatar');
+                    setDiscordAvatar(this, discordId, defaultAvatar);
+                };
+            });
+        });
+    </
+        
