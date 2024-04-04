@@ -34,7 +34,7 @@
 
         .container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(475px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 20px;
             justify-content: center;
             margin: 20px;
@@ -50,12 +50,16 @@
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            height: 400px;
-            width: 600px;
+            height: 350px;
         }
 
         .staff-member:hover {
             transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .staff-member:hover {
+            transform: scale(1.1);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
         }
 
@@ -78,8 +82,8 @@
 
         .banner {
             position: absolute;
-            width: 600px;
-            height: 400px;
+            width: 360px;
+            height: 350px;
         }
 
         .username {
@@ -87,12 +91,12 @@
             font-size: 18px;
             margin-bottom: 5px;
             text-align: center;
-            z-index: 1;
         }
 
         .description-box {
             width: 100%;
             padding: 15px;
+            /* Darker background for staff descriptions */
             border-radius: 0 0 10px 10px;
             box-sizing: border-box;
             height: 100%;
@@ -102,7 +106,6 @@
             opacity: 0;
             /* Initially hidden */
             transition: opacity 0.3s;
-            z-index: 1;
         }
 
         .staff-member:hover .description-box {
@@ -201,7 +204,7 @@
             </div>
         </div>
 
-        <!-- Staff Member 6 -->
+        <!-- Staff Member 6-->
         <div class="staff-member">
             <img class="banner" src="https://i.imgur.com/mkTL1S8.png">
             <div class="avatar-container">
@@ -211,6 +214,61 @@
             <div class="username">Katlyn</div>
             <div class="description-box">
                 <p>When you read this I hope you feel hugged</p>
+            </div>
+        </div>
+
+        <!-- CURRENTLY FILLER -->
+
+        <!-- Staff Member 7 -->
+        <div class="staff-member">
+            <img class="banner" src="https://media1.tenor.com/m/hRRIwu8lxB4AAAAC/bare-minimum-evangelion.gif">
+            <div class="avatar-container">
+                <img class="avatar" src="https://i.imgur.com/maRzwz2.jpg" alt="User Avatar" data-discord-id=""
+                    data-default-avatar="">
+            </div>
+            <div class="username">Unknown</div>
+            <div class="description-box">
+                <p>Queued the wrong music?!?</p>
+            </div>
+        </div>
+
+        <!-- Staff Member 8 -->
+        <div class="staff-member">
+            <img class="banner" src="https://media1.tenor.com/m/UBHYezmc5nsAAAAC/evangelion.gif">
+            <div class="avatar-container">
+                <img class="avatar" src="https://media1.tenor.com/m/PPu-SWuYm-4AAAAd/asuka-point.gif" alt="User Avatar"
+                    data-discord-id="" data-default-avatar="">
+            </div>
+            <div class="username">Unknown</div>
+            <div class="description-box">
+                <p>The robot was too fast too furious!</p>
+            </div>
+        </div>
+
+        <!-- Staff Member 9 -->
+        <div class="staff-member">
+            <img class="banner"
+                src="https://media1.tenor.com/m/OxC5N_7RHgQAAAAd/hyejinsgenre-neon-genesis-evangelion.gif">
+            <div class="avatar-container">
+                <img class="avatar" src="https://media1.tenor.com/m/dwXt2IJ-TKoAAAAd/kaji-evangelion.gif"
+                    alt="User Avatar" data-discord-id="" data-default-avatar="">
+            </div>
+            <div class="username">Unknown</div>
+            <div class="description-box">
+                <p>Pencilgon vs Sunraku when?</p>
+            </div>
+        </div>
+
+        <!-- Staff Member 10 -->
+        <div class="staff-member">
+            <img class="banner" src="https://media1.tenor.com/m/3SJrBPHrsJYAAAAC/shinji.gif">
+            <div class="avatar-container">
+                <img class="avatar" src="https://media1.tenor.com/m/VIDuhwlmLKAAAAAd/shinji-shinji-ikari.gif"
+                    alt="User Avatar" data-discord-id="" data-default-avatar="">
+            </div>
+            <div class="username">Unknown</div>
+            <div class="description-box">
+                <p>I ran out of ideas?</p>
             </div>
         </div>
     </div>
