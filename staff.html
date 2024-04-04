@@ -34,7 +34,7 @@
 
         .container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
             gap: 20px;
             justify-content: center;
             margin: 20px;
@@ -50,11 +50,12 @@
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            height: 350px;
+            height: 400px;
+            width: 100%;
         }
 
         .staff-member:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
         }
 
@@ -77,8 +78,8 @@
 
         .banner {
             position: absolute;
-            width: 360px;
-            height: 145px;
+            width: 615px;
+            height: 400px;
         }
 
         .username {
@@ -86,14 +87,13 @@
             font-size: 18px;
             margin-bottom: 5px;
             text-align: center;
+            z-index: 1;
         }
 
         .description-box {
             width: 100%;
             padding: 15px;
-            background-color: #394050;
             /* Darker background for staff descriptions */
-            border: 3px solid #7289DA;
             border-radius: 0 0 10px 10px;
             box-sizing: border-box;
             height: 100%;
@@ -103,6 +103,7 @@
             opacity: 0;
             /* Initially hidden */
             transition: opacity 0.3s;
+            z-index: 1;
         }
 
         .staff-member:hover .description-box {
@@ -124,20 +125,22 @@
         <a href="https://userpfp.github.io/website/staff.html">Staff</a>
         <a href="https://userpfp.github.io/website/server.html">Discord</a>
     </div>
-    <!-- Staff Member 1 -->
-    <div class="staff-member">
-        <img class="banner" src="https://i.imgur.com/vzyxjz8.gif">
-        <div class="avatar-container">
-            <img class="avatar" src="https://i.imgur.com/aRCm6Pt.png" alt="User Avatar"
-                data-discord-id="406084422308331522" data-default-avatar="406084422308331522.gif">
-        </div>
-        <div class="username">Coolesding</div>
-        <div class="description-box">
-            <p>The newest owner of UserPFP. Passionate about writing good-looking and efficient CSS code.</p>
-        </div>
-    </div>
 
     <div class="container">
+
+        <!-- Staff Member 1 -->
+        <div class="staff-member">
+            <img class="banner" src="https://i.imgur.com/vzyxjz8.gif">
+            <div class="avatar-container">
+                <img class="avatar" src="https://i.imgur.com/aRCm6Pt.png" alt="User Avatar"
+                    data-discord-id="406084422308331522" data-default-avatar="406084422308331522.gif">
+            </div>
+            <div class="username">Coolesding</div>
+            <div class="description-box">
+                <p>The newest owner of UserPFP. Passionate about writing good-looking and efficient CSS code.</p>
+            </div>
+        </div>
+
         <!-- Staff Member 2 -->
         <div class="staff-member">
             <img class="banner" src="https://i.imgur.com/U3xaMjR.gif">
@@ -166,7 +169,6 @@
             </div>
         </div>
 
-        <!-- New Staff Members -->
         <!-- Staff Member 4 -->
         <div class="staff-member">
             <img class="banner" src="https://i.imgur.com/FiRr8Lj.png">
@@ -191,6 +193,19 @@
             <div class="username">Clayy</div>
             <div class="description-box">
                 <p>Enjoys bringing excitement to coding. Boom getfok!</p>
+            </div>
+        </div>
+
+        <!-- Staff Member 6 -->
+        <div class="staff-member">
+            <img class="banner" src="https://i.imgur.com/mkTL1S8.png">
+            <div class="avatar-container">
+                <img class="avatar" src="https://i.imgur.com/9pdxITn.png" alt="User Avatar"
+                    data-discord-id="250322741406859265" data-default-avatar="4ae7b89f71f2dcdbaa7c810874d204b3.png">
+            </div>
+            <div class="username">Katlyn</div>
+            <div class="description-box">
+                <p>When you read this I hope you feel hugged</p>
             </div>
         </div>
     </div>
