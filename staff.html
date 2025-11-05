@@ -34,84 +34,78 @@
 
         .container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
             gap: 50px;
             justify-content: center;
             margin: 20px;
         }
 
         .staff-member {
-            transform: scale(1.1);
+            position: relative;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            transition: transform 0.3s, box-shadow 0.3s;
             background-color: #394050;
-            /* Darker background for staff members */
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            height: 350px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 100%;
+            max-width: 600px;
         }
 
         .staff-member:hover {
-            transform: scale(1.1);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-        }
-
-        .avatar-container {
-            position: relative;
-            width: 150px;
-            height: 300px;
-            /* Fixed height for avatar container */
-            overflow: hidden;
-            margin-bottom: 5px;
-            margin-top: 5px;
-        }
-
-        .avatar {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            object-fit: fill;
         }
 
         .banner {
             position: absolute;
-            width: 410px;
-            height: 350px;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+            filter: brightness(1.2) blur(2px);
+            opacity: 0.5;
         }
 
         .username {
             font-weight: bold;
-            font-size: 18px;
-            margin-bottom: 5px;
+            font-size: 20px;
             text-align: center;
+            padding: 10px;
+            background-color: rgba(57, 64, 80, 0.6);
+            color: #ffffff;
+            z-index: 1;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .staff-content {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 20px;
+            z-index: 1;
+        }
+
+        .avatar-container {
+            flex: 0 0 150px;
+            height: 150px;
+            margin-right: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .avatar {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .description-box {
-            width: 100%;
-            padding: 15px;
-            /* Darker background for staff descriptions */
-            border-radius: 0 0 10px 10px;
-            box-sizing: border-box;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            opacity: 0;
-            /* Initially hidden */
-            transition: opacity 0.3s;
-        }
-
-        .staff-member:hover .description-box {
-            opacity: 1;
-            /* Show on hover */
-        }
-
-        .staff-member:hover .banner {
-            opacity: 0.25;
-            /* Show on hover */
+            flex: 1;
+            font-size: 14px;
+            color: #ffffff;
         }
 
         .staff-info p {
@@ -134,107 +128,124 @@
         <!-- Staff Member 1 -->
         <div class="staff-member">
             <img class="banner" src="https://i.imgur.com/vzyxjz8.gif">
-            <div class="avatar-container">
-                <img class="avatar" src="https://i.imgur.com/aRCm6Pt.png" alt="User Avatar"
-                    data-discord-id="406084422308331522" data-default-avatar="406084422308331522.gif">
-            </div>
             <div class="username">Coolesding</div>
-            <div class="description-box">
-                <p>The newest owner of UserPFP. Passionate about writing good-looking and efficient CSS code.</p>
+            <div class="staff-content">
+                <div class="avatar-container">
+                    <img class="avatar" src="https://i.imgur.com/aRCm6Pt.png" alt="User Avatar"
+                        data-discord-id="406084422308331522" data-default-avatar="406084422308331522.gif">
+                </div>
+                <div class="description-box">
+                    <p>The newest owner of UserPFP. Passionate about writing good-looking and efficient CSS code.</p>
+                </div>
             </div>
         </div>
 
         <!-- Staff Member 2 -->
         <div class="staff-member">
             <img class="banner" src="https://i.imgur.com/U3xaMjR.gif">
-            <div class="avatar-container">
-                <img class="avatar"
-                    src="https://i.imgur.com/3PQBLtv.png"
-                    alt="User Avatar" data-discord-id="789872551731527690" data-default-avatar="789872551731527690.gif">
-            </div>
             <div class="username">FoxStorm1</div>
-            <div class="description-box">
-                <p>The old owner of UserPFP. Passionate about remaking and improving UserPFP.</p>
+            <div class="staff-content">
+                <div class="avatar-container">
+                    <img class="avatar" src="https://i.imgur.com/3PQBLtv.png" alt="User Avatar"
+                        data-discord-id="789872551731527690" data-default-avatar="789872551731527690.gif">
+                </div>
+                <div class="description-box">
+                    <p>The old owner of UserPFP. Passionate about remaking and improving UserPFP.</p>
+                </div>
             </div>
         </div>
 
         <!-- Staff Member 3 -->
         <div class="staff-member">
             <img class="banner" src="https://i.ibb.co/MBY0qxx/nexpid.gif">
-            <div class="avatar-container">
-                <img class="avatar"
-                    src="https://raw.githubusercontent.com/UserPFP/img/main/Avatars/8/853550207039832084.gif"
-                    alt="User Avatar" data-discord-id="853550207039832084" data-default-avatar="853550207039832084.gif">
-            </div>
             <div class="username">Nexpid</div>
-            <div class="description-box">
-                <p>Developer of the Vendetta plugin for UserPFP.</p>
+            <div class="staff-content">
+                <div class="avatar-container">
+                    <img class="avatar" src="https://i.imgur.com/tuoCipz.png" alt="User Avatar"
+                        data-discord-id="853550207039832084" data-default-avatar="853550207039832084.gif">
+                </div>
+                <div class="description-box">
+                    <p>Developer of the Vendetta plugin for UserPFP.</p>
+                </div>
             </div>
         </div>
 
         <!-- Staff Member 4 -->
         <div class="staff-member">
             <img class="banner" src="https://i.imgur.com/FiRr8Lj.png">
-            <div class="avatar-container">
-                <img class="avatar"
-                    src="https://raw.githubusercontent.com/UserPFP/img/main/Avatars/8/848339671629299742.gif"
-                    alt="User Avatar" data-discord-id="848339671629299742" data-default-avatar="848339671629299742.gif">
-            </div>
             <div class="username">Thororen</div>
-            <div class="description-box">
-                <p>Believes that being a true coder requires both skill and a creative mind.</p>
+            <div class="staff-content">
+                <div class="avatar-container">
+                    <img class="avatar"
+                        src="https://raw.githubusercontent.com/UserPFP/img/main/Avatars/8/848339671629299742.gif"
+                        alt="User Avatar" data-discord-id="848339671629299742"
+                        data-default-avatar="848339671629299742.gif">
+                </div>
+                <div class="description-box">
+                    <p>Believes that being a true coder requires both skill and a creative mind.</p>
+                </div>
             </div>
         </div>
 
         <!-- Staff Member 5 -->
         <div class="staff-member">
             <img class="banner" src="https://i.imgur.com/bAuCtgB.png">
-            <div class="avatar-container">
-                <img class="avatar" src="https://i.imgur.com/pqQfTII.png" alt="User Avatar"
-                    data-discord-id="500212086765518858" data-default-avatar="599fef33e29636709a38b1faef61580d.png">
-            </div>
             <div class="username">Clayy</div>
-            <div class="description-box">
-                <p>Enjoys bringing excitement to coding. Boom getfok!</p>
+            <div class="staff-content">
+                <div class="avatar-container">
+                    <img class="avatar" src="https://i.imgur.com/pqQfTII.png" alt="User Avatar"
+                        data-discord-id="500212086765518858" data-default-avatar="599fef33e29636709a38b1faef61580d.png">
+                </div>
+                <div class="description-box">
+                    <p>Enjoys bringing excitement to coding. Boom getfok!</p>
+                </div>
             </div>
         </div>
 
         <!-- Staff Member 6-->
         <div class="staff-member">
             <img class="banner" src="https://i.imgur.com/mkTL1S8.png">
-            <div class="avatar-container">
-                <img class="avatar" src="https://i.imgur.com/9pdxITn.png" alt="User Avatar"
-                    data-discord-id="250322741406859265" data-default-avatar="4ae7b89f71f2dcdbaa7c810874d204b3.png">
-            </div>
             <div class="username">Katlyn</div>
-            <div class="description-box">
-                <p>When you read this I hope you feel hugged</p>
+            <div class="staff-content">
+                <div class="avatar-container">
+                    <img class="avatar" src="https://i.imgur.com/9pdxITn.png" alt="User Avatar"
+                        data-discord-id="250322741406859265" data-default-avatar="4ae7b89f71f2dcdbaa7c810874d204b3.png">
+                </div>
+                <div class="description-box">
+                    <p>When you read this I hope you feel hugged</p>
+                </div>
             </div>
         </div>
 
         <!-- Staff Member 7-->
         <div class="staff-member">
             <img class="banner" src="https://i.imgur.com/ZflpQQ3.png">
-            <div class="avatar-container">
-                <img class="avatar" src="https://raw.githubusercontent.com/UserPFP/img/main/Avatars/9/929208515883569182.gif" alt="User Avatar" data-discord-id="929208515883569182"
-                    data-default-avatar="929208515883569182.png">
-            </div>
             <div class="username">Indi</div>
-            <div class="description-box">
-                <p>Ping = mute</p>
+            <div class="staff-content">
+                <div class="avatar-container">
+                    <img class="avatar"
+                        src="https://raw.githubusercontent.com/UserPFP/img/main/Avatars/9/929208515883569182.gif"
+                        alt="User Avatar" data-discord-id="929208515883569182"
+                        data-default-avatar="929208515883569182.png">
+                </div>
+                <div class="description-box">
+                    <p>Ping = mute</p>
+                </div>
             </div>
         </div>
 
         <!-- Staff Member 8-->
         <div class="staff-member">
             <img class="banner" src="https://i.imgur.com/2mitqtb.png">
-            <div class="avatar-container">
-                <img class="avatar" src="https://i.imgur.com/q306O9n.png"
-                    alt="User Avatar" data-discord-id="258731845267619840" data-default-avatar="258731845267619840.png">
-            </div>
             <div class="username">p0rtl</div>
-            <div class="description-box">
-                <p>TBA</p>
+            <div class="staff-content">
+                <div class="avatar-container">
+                    <img class="avatar" src="https://i.imgur.com/q306O9n.png" alt="User Avatar"
+                        data-discord-id="258731845267619840" data-default-avatar="258731845267619840.png">
+                </div>
+                <div class="description-box">
+                    <p>TBA</p>
+                </div>
             </div>
         </div>
     </div>
