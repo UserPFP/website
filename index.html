@@ -285,8 +285,8 @@
         async function initScrollingColumns() {
             const urls = await getValidGifURLs();
             shuffleArray(urls);
-            renderColumn(urls.slice(0, 12), "pfpColumn1");
-            renderColumn(urls.slice(12, 24), "pfpColumn2");
+            renderColumn(urls.slice(0, 24), "pfpColumn1");
+            renderColumn(urls.slice(24, 48), "pfpColumn2");
         }
 
         document.addEventListener("DOMContentLoaded", () => {
