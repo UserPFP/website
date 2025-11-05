@@ -2,100 +2,211 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>UserPFP</title>
-    <link rel="stylesheet" type="text/css" href="styles.css"> <!-- Link to an external CSS file -->
-    <link href="https://fonts.googleapis.com/css2?family=Uni+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Uni+Sans:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <style>
-        /* Reset some default styles */
         body {
             margin: 0;
             padding: 0;
             font-family: 'Uni Sans', sans-serif;
+            background-color: #282c35;
+            color: #fff;
         }
 
-        /* Style the navbar similar to server.html */
         .navbar {
             text-align: center;
-            background-color: #4a4d52;
+            background-color: #3d424d;
             padding: 15px;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
 
         .navbar a {
-            color: white;
+            color: #fff;
             text-decoration: none;
-            margin: 0 15px;
+            margin: 0 20px;
+            font-weight: bold;
+            font-size: 16px;
         }
 
-        /* Center the header */
         .header {
             text-align: center;
-            margin-bottom: 20px;
-            /* Increase the margin for a better separation */
-        }
-
-        /* Style the widget container without margin */
-        .widget {
             max-width: 800px;
-            /* Adjusted max-width for better readability */
-            text-align: center;
-            /* Center the content within the widget */
+            margin: 0 auto 40px;
+            padding: 0 20px;
         }
 
-        /* Style the iframe within the widget */
-        .widget iframe {
-            width: 100vw;
-            height: auto;
-            border: none;
+        .header h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
         }
 
-        /* Apply styles similar to server.html */
-        .github-icon {
-            width: 50px;
-            height: 50px;
-            transition: transform 0.3s, filter 0.3s;
+        .header h2 {
+            font-size: 24px;
+            margin-top: 30px;
         }
 
-        .github-icon:hover {
-            transform: scale(1.2);
-            filter: brightness(1.5);
+        .header p {
+            font-size: 16px;
+            margin: 10px 0;
         }
 
-        .server-button {
-            display: inline-block;
-            padding: 10px 20px;
-            margin-top: 10px;
+        .steps a {
+            display: block;
+            margin: 8px 0;
+            color: #7289da;
             text-decoration: none;
-            color: #fff;
-            background-color: #7289da;
-            border-radius: 5px;
-            transition: background-color 0.3s;
+            font-weight: bold;
         }
 
-        .server-button:hover {
-            background-color: #4a4d52;
+        .steps a:hover {
+            text-decoration: underline;
         }
 
-        .server-container {
+        .pfp-column-wrapper {
+            position: fixed;
+            top: 48px;
+            width: 120px;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .pfp-column-left {
+            left: 0;
+        }
+
+        .pfp-column-right {
+            right: 0;
+        }
+
+        .pfp-column {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            animation: scrollColumn 40s linear infinite;
+            padding: 20px 10px;
+            z-index: -1;
+        }
+
+        @keyframes scrollColumn {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-50%);
+            }
+        }
+
+        .pfp-item {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: #2f3136;
+            border: 3px solid #fff;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+            flex-shrink: 0;
+        }
+
+        .pfp-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .mod-section {
+            max-width: 1000px;
+            margin: 60px auto 40px;
+            padding: 20px;
             text-align: center;
-            margin: 20px;
+            position: relative;
+            z-index: 200;
         }
 
-        .server-info {
-            margin-top: 20px;
+        .mod-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
         }
 
-        .server-image {
-            max-width: 100%;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        .mod-button {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            border-radius: 12px;
+            background-color: #394050;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            overflow: visible;
+            z-index: 201;
         }
 
-        .server-buttons {
-            margin-top: 20px;
+        .mod-button img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 12px;
+        }
+
+        .mod-button:hover {
+            transform: scale(1.1);
+        }
+
+        .mod-dropdown {
+            position: fixed;
+            width: 280px;
+            padding: 20px;
+            border-radius: 10px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-blend-mode: multiply;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            animation: fadeIn 0.4s ease forwards;
+            z-index: 9999;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            word-break: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .mod-dropdown a {
+            color: #7289da;
+            text-decoration: underline;
+            word-break: break-word;
+        }
+
+        .mod-dropdown code,
+        .mod-dropdown pre {
+            background-color: #1e1e1e;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-family: monospace;
+            font-size: 14px;
+            color: #fff;
+            display: block;
+            white-space: pre-wrap;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
     </style>
 </head>
@@ -104,34 +215,155 @@
     <div class="navbar">
         <a href="index.html">Home</a>
         <a href="staff.html">Staff</a>
-        <a href="server.html">Discord</a>
+        <a href="https://discord.com/invite/userpfp-1129784704267210844">Discord</a>
     </div>
+
     <div class="header">
         <h1>UserPFP</h1>
-        <p>UserPFP allows you to use a gif in Discord without Nitro!</p>
-        <br>
-        <h2>How to Request a Profile Picture (PFP):</h2>
-        <p>You can click the instructions.</p>
-        <a href="https://discord.gg/userpfp-1129784704267210844">1. Join the UserPFP Discord Server.</a>
-        <br>
-        <a href="https://discord.com/channels/1129784704267210844/1162834399801384970">2. Familiarize yourself with the
-            server rules.</a>
-        <br>
-        <a href="https://discord.com/channels/1129784704267210844/1162800344603037856">3. Navigate to the #request-here
-            channel.</a>
-        <br>
-        <a href="https://discord.com/channels/1129784704267210844/1162800681409855600">4. Await approval from our
-            team.</a>
-        <br>
-        <p>Example PFPs:</p>
+        <p>Use animated profile pictures on Discord — even without Nitro!</p>
+        <h2>🚀 How to Request a Profile Picture</h2>
+        <p>Follow these steps to get started:</p>
+        <div class="steps">
+            <a href="https://discord.gg/userpfp-1129784704267210844">1. Join the UserPFP Discord Server</a>
+            <a href="https://discord.com/channels/1129784704267210844/1162834399801384970">2. Read the Server Rules</a>
+            <a href="https://discord.com/channels/1129784704267210844/1162800344603037856">3. Go to #request-here</a>
+            <a href="https://discord.com/channels/1129784704267210844/1162800681409855600">4. Wait for Team Approval</a>
+        </div>
     </div>
-    <div class="widget" style="justify-content: center;">
-        <!-- Your widget content goes here -->
-        <br>
-        <iframe src="https://userpfp.github.io/website/widget.html" width="100%" height="300" frameborder="0"></iframe>
-        <br>
-        <iframe src="https://userpfp.github.io/website/widget.html" width="100%" height="300" frameborder="0"></iframe>
+
+    <div class="pfp-column-wrapper pfp-column-left">
+        <div class="pfp-column" id="pfpColumn1"></div>
     </div>
+    <div class="pfp-column-wrapper pfp-column-right">
+        <div class="pfp-column" id="pfpColumn2"></div>
+    </div>
+
+    <div class="mod-section">
+        <h2>🧩 Choose Your Client Mod</h2>
+        <div class="mod-grid" id="modGrid"></div>
+    </div>
+
+    <script>
+        async function getValidGifURLs() {
+            try {
+                const response = await fetch('https://userpfp.github.io/UserPFP/source/data.json');
+                const data = await response.json();
+                const avatars = data.avatars || {};
+                return Object.values(avatars).filter(url =>
+                    !url.includes("profileBadges") &&
+                    !url.includes("profileBadge") &&
+                    !url.includes("badges") &&
+                    !url.includes("cdn.discordapp.com/icons/")
+                );
+            } catch (error) {
+                console.error("Failed to fetch avatar data:", error);
+                return [];
+            }
+        }
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function renderColumn(urls, containerId) {
+            const container = document.getElementById(containerId);
+            urls.concat(urls).forEach(url => {
+                const item = document.createElement('div');
+                item.className = 'pfp-item';
+                const img = document.createElement('img');
+                img.src = url;
+                img.alt = 'User PFP';
+                img.onerror = () => item.remove();
+                item.appendChild(img);
+                container.appendChild(item);
+            });
+        }
+
+        async function initScrollingColumns() {
+            const urls = await getValidGifURLs();
+            shuffleArray(urls);
+            renderColumn(urls.slice(0, 12), "pfpColumn1");
+            renderColumn(urls.slice(12, 24), "pfpColumn2");
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initScrollingColumns();
+
+            const modLogos = {
+                equicord: "https://equicord.org/assets/icons/equicord/icon-black.png",
+                vencord: "https://equicord.org/assets/icons/vencord/icon.png",
+                betterdiscord: "https://images.equicord.org/api/undefined/files/raw/019a5260-8ca4-7008-a89e-30427975b652",
+                goosecord: "https://images.equicord.org/api/undefined/files/raw/019a5260-8ca4-7007-ab73-65dffb4353b8",
+                replugged: "https://images.equicord.org/api/undefined/files/raw/019a5260-8ca4-7006-8ac6-8512377d1f58",
+                shelter: "https://images.equicord.org/api/undefined/files/raw/019a5260-8ca4-7005-a865-2d3cc2f6b23c",
+                aliucord: "https://images.equicord.org/api/undefined/files/raw/019a5260-8ca4-7004-844b-04dbc906256c",
+                vendetta: "https://images.equicord.org/api/undefined/files/raw/019a5260-8ca4-7003-8d7d-5e59de0a38d3",
+                bunny: "https://images.equicord.org/api/undefined/files/raw/019a5260-8ca4-7002-af09-71777b39c12f",
+                revenge: "https://images.equicord.org/api/undefined/files/raw/019a5260-8ca4-7000-94cc-2800ec57cd07",
+                kettu: "https://images.equicord.org/api/undefined/files/raw/019a5260-8ca4-7001-ad48-2d37d308f96f",
+            };
+
+            const vencord = `<a href="https://raw.githubusercontent.com/UserPFP/UserPFP/main/userpfp.theme.css" target="_blank" style="color:#7289da;text-decoration:underline;">this theme link</a>`;
+            const betterdiscord = `<pre><code>@import url('https://raw.githubusercontent.com/UserPFP/UserPFP/main/userpfp.theme.css');</code></pre>`;
+            const replugged = `<a href="https://replugged.dev/store/dev.WolfPlugs.UserPFP" target="_blank" style="color:#7289da;text-decoration:underline;">official plugin store</a>`;
+            const shelter = `<a href="https://spikehd.dev/shelter-plugins/userpfp/" target="_blank" style="color:#7289da;text-decoration:underline;">this plugin link</a>`;
+            const aliucord = `<a href="https://github.com/OmegaSunkey/awesomeplugins/raw/builds/UserPFP.zip" target="_blank" style="color:#7289da;text-decoration:underline;">this plugin file</a>`
+            const vendetta = `<a href="https://revenge.nexpid.xyz/userpfp" target="_blank" style="color:#7289da;text-decoration:underline;">this plugin link</a>`
+
+            const modDescriptions = {
+                equicord: "Equicord includes the plugin by default. Go to Settings → Plugins → Search for 'UserPFP' and turn it on!",
+                vencord: `Vencord only supports the theme. Paste ${vencord} into Settings → Themes → Online Themes.`,
+                betterdiscord: `Add ${betterdiscord} to your CustomCSS/QuickCSS to enable UserPFP.`,
+                goosecord: `Add ${betterdiscord} to your Goosecord setup.`,
+                replugged: `Install UserPFP from the ${replugged}.`,
+                shelter: `Add ${shelter} to your Shelter plugins list.`,
+                aliucord: `Download ${aliucord} and add it to your Aliucord plugins folder.`,
+                vendetta: `Add ${vendetta} to Vendetta in the plugins tab.`,
+                bunny: `Add ${vendetta} to Bunny in the plugins tab.`,
+                revenge: `Add ${vendetta} to Revenge in the plugins tab.`,
+                kettu: `Add ${vendetta} to Kettu in the plugins tab.`,
+            };
+
+            const modGrid = document.getElementById("modGrid");
+
+            Object.entries(modLogos).forEach(([key, url]) => {
+                const btn = document.createElement("div");
+                btn.className = "mod-button";
+                btn.innerHTML = `<img src="${url}" alt="${key}-logo">`;
+                btn.onclick = () => toggleDropdown(btn, key, url);
+                modGrid.appendChild(btn);
+            });
+
+            function toggleDropdown(button, modKey, logoUrl) {
+                document.querySelectorAll(".mod-dropdown").forEach(el => el.remove());
+
+                const rect = button.getBoundingClientRect();
+
+                const dropdown = document.createElement("div");
+                dropdown.className = "mod-dropdown";
+                dropdown.style.backgroundImage = `url(${logoUrl})`;
+                dropdown.innerHTML = `<p>${modDescriptions[modKey]}</p>`;
+                dropdown.style.top = `${rect.bottom + 10}px`;
+                dropdown.style.left = `${rect.left + rect.width / 2}px`;
+                dropdown.style.transform = "translateX(-50%)";
+
+                document.body.appendChild(dropdown);
+
+                setTimeout(() => {
+                    const handleClickOutside = (event) => {
+                        if (!dropdown.contains(event.target) && !button.contains(event.target)) {
+                            dropdown.remove();
+                            document.removeEventListener("click", handleClickOutside);
+                        }
+                    };
+                    document.addEventListener("click", handleClickOutside);
+                }, 0);
+            }
+        });
+    </script>
 </body>
 
 </html>
